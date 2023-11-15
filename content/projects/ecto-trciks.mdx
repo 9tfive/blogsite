@@ -1,0 +1,36 @@
+---
+title: "Ecto Tricks: Leveraging Composable Queries in Elixir"
+description: "Discover the power of composable queries in Ecto for building expressive and reusable database queries."
+repository: your-github-repo
+date: "2023-11-17"
+published: true
+---
+
+Ecto, the database wrapper for Elixir, provides a rich set of features, and one of its gems is composable queries. Let's explore how composable queries in Ecto can enhance the readability and expressiveness of your database interactions.
+
+## Introduction to Ecto and Composable Queries
+
+Ecto allows you to build database queries using a composable and expressive syntax. Composable queries enable you to break down complex queries into smaller, reusable parts.
+
+## Building a Composable Query
+
+Consider a scenario where you need to fetch active users from the database:
+
+```elixir
+defmodule UserQueries do
+  import Ecto.Query, warn: false
+
+  def active_users_query do
+    from u in User,
+      where: u.active == true
+  end
+end
+```
+Now, you can use this query in various contexts:
+```elixir
+active_users = Repo.all(UserQueries.active_users_query)
+```
+
+This approach allows you to build and reuse composable queries throughout your application, promoting clarity and maintainability.
+
+Leverage Ecto's composable queries to simplify your database interactions and build expressive queries in your Elixir projects!

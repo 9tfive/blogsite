@@ -1,0 +1,59 @@
+---
+title: "Elixir Protocols Unveiled: A Guide to Writing and Using Protocols"
+
+description: "Unlock the power of Elixir protocols, a mechanism for polymorphism and dynamic dispatch. Learn how to define protocols and implement them for different types to enhance your code's flexibility and maintainability."
+
+repository: your-github-repo
+
+date: "2023-11-17"
+published: true
+---
+
+In the world of Elixir, protocols serve as a gateway to achieve polymorphism and dynamic dispatch, allowing you to define and implement behaviors for different types. This guide will unveil the magic of Elixir protocols, demonstrating how to define them and provide implementations for diverse data types.
+
+## Define a Protocol
+
+To define a protocol, we use the `defprotocol` macro. Let's create a `Triple` protocol with a single function, `triple`:
+
+```elixir
+defprotocol Triple do
+  def triple(input)
+end
+```
+
+This protocol declares the `triple` function, and different types can provide their own implementations.
+
+## Implement the Protocol
+Now, let's implement the `Triple` protocol for two different types: `Integer` and `List`. We use the `defimpl` macro for this:
+```elixir
+defimpl Triple, for: Integer do
+  def triple(int) do
+    int * 3
+  end
+end
+
+defimpl Triple, for: List do
+  def triple(list) do
+    list ++ list ++ list
+  end
+end
+```
+Here, we provide implementations for the `triple` function for both integers and lists.
+
+## Usage
+Load the code into IEx and witness the dynamic dispatch in action:
+```elixir
+iex> Triple.triple(3)
+9
+
+iex> Triple.triple([1, 2])
+[1, 2, 1, 2, 1, 2]
+```
+By calling `Triple.triple` with different types, Elixir dynamically dispatches to the appropriate implementation, showcasing the power and flexibility of protocols.
+
+Embrace Elixir protocols to write more flexible and maintainable code, where behaviors can be extended for various data types without compromising clarity and coherence.
+
+
+
+
+

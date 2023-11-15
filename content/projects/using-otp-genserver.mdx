@@ -1,0 +1,46 @@
+---
+title: "OTP for the Win: Creating a Simple GenServer in Elixir"
+description: "Harness the power of OTP (Open Telecom Platform) by creating a basic GenServer for a real-world scenario."
+repository: your-github-repo
+date: "2023-11-17"
+published: true
+---
+
+OTP (Open Telecom Platform) is a set of tools and libraries bundled with Elixir that simplifies building robust, concurrent, and fault-tolerant systems. Let's harness the power of OTP by creating a basic GenServer for a practical scenario.
+
+## Introduction to OTP
+
+OTP provides abstractions for building reliable systems, and one of its key components is GenServer. A GenServer is a generic server that can be used to manage state and handle concurrent requests.
+
+## Creating a Basic GenServer
+
+Let's create a GenServer to manage a simple counter:
+
+```elixir
+defmodule CounterServer do
+  use GenServer
+
+  def start_link(_) do
+    GenServer.start_link(__MODULE__, 0, name: __MODULE__)
+  end
+
+  def init(counter) do
+    {:ok, counter}
+  end
+
+  def handle_call(:increment, _from, counter) do
+    {:reply, counter + 1, counter + 1}
+  end
+end
+```
+
+Now, you can interact with your GenServer:
+
+```elixir
+{:ok, pid} = CounterServer.start_link
+CounterServer.call(pid, :increment) # Returns {:ok, 1}
+```
+
+This basic example illustrates how OTP's GenServer simplifies the creation of concurrent and stateful components in your Elixir applications.
+
+Harness the power of OTP and GenServer to build robust and concurrent systems in your Elixir projects!

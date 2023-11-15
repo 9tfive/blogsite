@@ -1,0 +1,52 @@
+---
+title: "Elixir's Pipeline Prowess: Leveraging Kernel.|| for Seamless Conditionals"
+
+description: "Uncover the advantage of using Kernel.|| within Elixir pipelines to maintain the flow and enhance the readability of your code when incorporating conditional operations."
+
+repository: your-github-repo
+
+date: "2023-11-17"
+published: true
+---
+
+Elixir's pipelines are a powerful tool for enhancing code readability and maintainability, but what happens when we need to introduce conditional operations without disrupting the pipeline? Enter the advantage of using `Kernel.||`—a solution that seamlessly integrates conditional logic into your Elixir pipelines.
+
+## Breaking the Pipeline for `or` Operations
+
+Consider the scenario where you have a pipeline, and at a certain point, you need to introduce an `or` operation:
+
+```elixir
+result = :input
+|> do_something
+|> do_another_thing
+# Bad
+result = (result || :default_output)
+|> do_something_else
+```
+
+This breaks the flow of the pipeline, making the code less elegant and harder to follow.
+
+## Leveraging Kernel.|| in the Pipeline
+The good news is that `||` in Elixir is just a shortcut for `Kernel.||`. By using `Kernel.||` directly within the pipeline, you can seamlessly introduce conditional operations without disrupting the flow:
+```elixir
+result = :input
+|> do_something
+|> do_another_thing
+|> Kernel.||(:default_output)  #<-- This line
+|> do_something_else
+```
+
+In this example, `Kernel.||` serves as an inline conditional within the pipeline, allowing you to maintain the elegance and readability of your code.
+
+## Usage and Benefits
+```elixir
+iex> result = :input
+...> |> do_something
+...> |> do_another_thing
+...> |> Kernel.||(:default_output)  
+...> |> do_something_else
+```
+
+By leveraging `Kernel.||` in your Elixir pipelines, you ensure that conditional operations seamlessly integrate into your code, preserving the pipeline's clarity and structure. This approach aligns with Elixir's philosophy of providing concise and expressive solutions, even in the face of conditional complexities.
+
+Enhance your Elixir pipelines by embracing the advantage of `Kernel.||`—where conditional logic flows seamlessly without disrupting the elegance of your code.

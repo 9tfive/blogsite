@@ -1,0 +1,37 @@
+---
+title: "Mixing It Up: Creating Custom Mix Tasks in Elixir"
+description: "Learn how to extend your Elixir project with custom Mix tasks to streamline development tasks."
+repository: your-github-repo
+date: "2023-11-17"
+published: true
+---
+
+Mix tasks are a powerful tool in the Elixir ecosystem, allowing you to automate various development tasks. Let's explore how to create custom Mix tasks to enhance your Elixir projects.
+
+## Introduction
+
+Mix tasks are commands that can be run in the terminal to perform various tasks related to your Elixir project. While Mix comes with many built-in tasks, you can also create custom tasks to suit your specific needs.
+
+## Creating a Custom Mix Task
+
+Let's create a simple Mix task that greets the user:
+
+```elixir
+# lib/mix/tasks/greet.ex
+defmodule Mix.Tasks.Greet do
+  use Mix.Task
+
+  def run(_) do
+    IO.puts("Hello, Elixir Developer!")
+  end
+end
+```
+After creating the file, you can run your custom Mix task using:
+```sh
+mix greet
+```
+
+Creating custom Mix tasks allows you to extend your project's functionality in a clean and modular way.
+
+Start mixing things up in your Elixir projects by creating custom Mix tasks tailored to your development workflow!
+

@@ -1,0 +1,41 @@
+---
+title: "Unlocking Elixir Magic: Creating and Documenting Custom Sigils"
+description: "Learn the art of crafting custom sigils in Elixir and document their power for a seamless coding experience."
+repository: your-github-repo
+date: "2023-11-17"
+published: true
+---
+
+`Sigils` in Elixir are a powerful tool for working with different data types. In this guide, we'll dive into the enchanting realm of creating and documenting custom sigils to enhance your Elixir coding experience.
+
+## Creating Custom Sigils
+
+```elixir
+defmodule MySigils do
+  # Returns the downcased string; if option 'l' is given, returns the list of downcased letters
+  def sigil_l(string, []), do: String.downcase(string)
+  def sigil_l(string, [?l]), do: String.downcase(string) |> String.graphemes
+
+  # Returns the upcased string; if option 'l' is given, returns the list of upcased letters
+  def sigil_u(string, []), do: String.upcase(string)
+  def sigil_u(string, [?l]), do: String.upcase(string) |> String.graphemes
+end
+```
+
+These custom sigils (`~l` and `~u`) are designed to downcase or upcase a string, respectively. The magical part is that if the option `~l` is provided, they return a list of individual letters.
+
+## Usage
+Load the module into your IEx:
+```elixir
+iex> import MySigils
+iex> ~l/HELLO/
+"hello"
+iex> ~l/HELLO/l
+["h", "e", "l", "l", "o"]
+iex> ~u/hello/
+"HELLO"
+iex> ~u/hello/l
+["H", "E", "L", "L", "O"]
+```
+
+By creating and utilizing these custom sigils, you unlock a new level of expressiveness and convenience in your Elixir code. Documenting their usage ensures a seamless experience for both you and anyone who interacts with your magical Elixir spells.
