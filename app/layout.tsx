@@ -9,11 +9,11 @@ export const metadata: Metadata = {
     default: "A. Mughees",
     template: "%s | chronark.com",
   },
-  description: "Full Stack Developer, deleving the realm of functional programming.",
+  description: "Coding Adventures with a Twist: Journeying as a Full Stack Sorcerer through the Magical Realms of Functional Programming!",
   openGraph: {
     title: "A. Mughees",
     description:
-      "Full Stack Developer, deleving the realm of functional programming.",
+      "Coding Adventures with a Twist: Journeying as a Full Stack Sorcerer through the Magical Realms of Functional Programming!",
     url: "https://chronark.com",
     siteName: "blogsite",
     images: [

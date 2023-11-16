@@ -35,7 +35,7 @@ export default function Home() {
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-16 text-center animate-fade-in">
         <h2 className="text-sm text-zinc-500 ">
-          Full Stack Developer, deleving the realm of functional programming.
+          Coding Adventures with a Twist: Journeying as a Full Stack Sorcerer through the Magical Realms of Functional Programming!
         </h2>
       </div>
     </div>
