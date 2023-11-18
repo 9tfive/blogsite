@@ -7,18 +7,18 @@ import { Analytics } from "./components/analytics";
 export const metadata: Metadata = {
   title: {
     default: "A. Mughees",
-    template: "%s | chronark.com",
+    template: "%s | blogsite",
   },
   description: "Coding Adventures with a Twist: Journeying as a Full Stack Sorcerer through the Magical Realms of Functional Programming!",
   openGraph: {
     title: "A. Mughees",
     description:
       "Coding Adventures with a Twist: Journeying as a Full Stack Sorcerer through the Magical Realms of Functional Programming!",
-    url: "https://chronark.com",
+    url: "https://blogsite-wine.vercel.app/",
     siteName: "blogsite",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://blogsite-wine.vercel.app/og.png",
         width: 1920,
         height: 1080,
       },
